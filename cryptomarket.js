@@ -205,18 +205,6 @@ function updatePortfolioCard() {
 
 // Initialize cryptocurrency display
 function initCryptoMarket() {
-    // Load saved crypto data if available
-    const savedState = localStorage.getItem('investmentGame');
-    if (savedState) {
-        const gameState = JSON.parse(savedState);
-        if (gameState.cryptocurrencies) {
-            cryptocurrencies = gameState.cryptocurrencies;
-        }
-        if (gameState.userBalances) {
-            userBalances = gameState.userBalances;
-        }
-    }
-
     const cryptoList = document.querySelector('.crypto-list');
     if (!cryptoList) return;
     
@@ -281,11 +269,8 @@ function initCryptoMarket() {
     // Initialize balances
     initializeBalances();
     
-    // Start price updates and auto-save
-    setInterval(() => {
-        updateCryptoPrices();
-        saveGame(); // Save after price updates
-    }, 10000);
+    // Start price updates
+    setInterval(updateCryptoPrices, 10000);
 }
 
 // Initialize when DOM is loaded

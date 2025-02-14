@@ -232,15 +232,8 @@ function prestige() {
 // Save and load functions
 function saveGame() {
     const gameState = {
-        money,
-        moneyPerSecond,
-        prestigePoints,
-        prestigeMultiplier,
-        achievements,
-        stats,
-        upgrades,
-        cryptocurrencies,
-        userBalances
+        money, moneyPerSecond, prestigePoints, prestigeMultiplier,
+        achievements, stats, upgrades
     };
     localStorage.setItem('investmentGame', JSON.stringify(gameState));
 }
@@ -249,26 +242,9 @@ function loadGame() {
     const savedState = localStorage.getItem('investmentGame');
     if (savedState) {
         const gameState = JSON.parse(savedState);
-        money = gameState.money;
-        moneyPerSecond = gameState.moneyPerSecond;
-        prestigePoints = gameState.prestigePoints;
-        prestigeMultiplier = gameState.prestigeMultiplier;
-        achievements = gameState.achievements;
-        stats = gameState.stats;
-        upgrades = gameState.upgrades;
-        
-        // Load cryptocurrency data if it exists
-        if (gameState.cryptocurrencies) {
-            cryptocurrencies = gameState.cryptocurrencies;
-        }
-        if (gameState.userBalances) {
-            userBalances = gameState.userBalances;
-        }
-        
+        Object.assign(window, gameState);
         updateDisplays();
-        updateAchievementsPage();
     }
-}
 }
 
 // Wait for DOM to be fully loaded
