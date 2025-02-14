@@ -1,0 +1,289 @@
+/* Modern Design System */
+:root {
+    /* Dark theme (default) */
+    --primary: #818cf8;
+    --primary-dark: #6366f1;
+    --secondary: #38bdf8;
+    --accent: #a78bfa;
+    --success: #4ade80;
+    --danger: #f87171;
+    --warning: #fbbf24;
+    --background: #1e1e2e;
+    --surface: #2a2b3d;
+    --text: #e2e8f0;
+    --text-light: #94a3b8;
+    --border: #374151;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -1px rgba(0,0,0,0.2);
+    --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.3), 0 4px 6px -2px rgba(0,0,0,0.2);
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+.game-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+header {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    margin-bottom: 2rem;
+    border: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease;
+}
+
+header:hover {
+    transform: translateY(-2px);
+}
+
+header h1 {
+    color: var(--text);
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+header h1 i {
+    color: var(--primary);
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.money-display {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--success);
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+#per-second {
+    font-size: 1rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.main-clicker {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+#invest-btn {
+    padding: 1.5rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    color: white;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+#invest-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+}
+
+#invest-btn:active {
+    transform: translateY(0);
+}
+
+#invest-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+}
+
+#invest-btn.clicked::after {
+    width: 300%;
+    height: 300%;
+    opacity: 0;
+}
+
+.upgrades-container {
+    background: var(--surface);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border);
+    margin-bottom: 2rem;
+}
+
+.upgrades-container h2 {
+    color: var(--text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.upgrades-container h2 i {
+    color: var(--primary);
+}
+
+.upgrade-item {
+    background: var(--background);
+    padding: 1.25rem;
+    margin-bottom: 1rem;
+    border-radius: 0.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border);
+}
+
+.upgrade-item:hover {
+    transform: translateX(4px);
+    box-shadow: var(--shadow-sm);
+}
+
+.upgrade-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.upgrade-icon {
+    width: 3rem;
+    height: 3rem;
+    background: var(--primary);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+}
+
+.upgrade-details h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+}
+
+.upgrade-details p {
+    color: var(--text-light);
+    font-size: 0.875rem;
+}
+
+.upgrade-cost {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 1.125rem;
+}
+
+.achievements-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.achievements-link a:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-container {
+        margin: 1rem auto;
+        padding: 0 1rem;
+    }
+
+    header {
+        padding: 1rem;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    .money-display {
+        font-size: 1.5rem;
+    }
+
+    #invest-btn {
+        padding: 1.25rem 2.5rem;
+        font-size: 1.25rem;
+    }
+
+    .upgrades-container {
+        padding: 1.5rem;
+    }
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+@keyframes slideIn {
+    from { transform: translateX(-10px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.pulse {
+    animation: pulse 0.5s ease-in-out;
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease-out;
+}

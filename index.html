@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Simulator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="crypto.css">
+    <script src="https://kit.fontawesome.com/bc3d0bf176.js" crossorigin="anonymous"></script>
+    <script src="gamescript.js"></script>
+    <script src="cryptomarket.js"></script>
+    <script src="gametest.js"></script>
+</head>
+<body>
+    <div class="game-container">
+        <header>
+            <h1><i class="fas fa-chart-line"></i> Investment Simulator</h1>
+            <div class="stats">
+                <div class="money-display">
+                    <span id="money">$0</span>
+                    <span id="per-second">($0/sec)</span>
+                </div>
+                <div class="achievements-link">
+                    <a href="achievements.html" class="back-btn"><i class="fas fa-trophy"></i> Achievements</a>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="main-clicker">
+                <button id="invest-btn"><i class="fas fa-hand-holding-usd"></i> Invest!</button>
+            </div>
+
+            <div class="upgrades-container">
+                <h2><i class="fas fa-store"></i> Investments & Upgrades</h2>
+                <div class="upgrades-list">
+                    <!-- Upgrades will be dynamically added here by JavaScript -->
+                </div>
+            </div>
+
+            <div class="crypto-container">
+                <h2><i class="fas fa-coins"></i> Cryptocurrency Market</h2>
+                <div class="crypto-list">
+                    <!-- Cryptocurrencies will be dynamically added here by JavaScript -->
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

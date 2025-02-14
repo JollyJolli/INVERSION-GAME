@@ -1,0 +1,49 @@
+{
+    "investments": {
+        "stockMarket": {
+            "name": "Stock Market",
+            "baseCost": 10,
+            "income": 0.1,
+            "unlockCondition": 0,
+            "description": "Invest in the stock market for steady returns",
+            "costMultiplier": 1.15,
+            "icon": "<i class=\"fas fa-chart-line\"></i>"
+        },
+        "realEstate": {
+            "name": "Real Estate",
+            "baseCost": 100,
+            "income": 1,
+            "unlockCondition": 50,
+            "description": "Purchase properties for rental income",
+            "costMultiplier": 1.2,
+            "icon": "<i class=\"fas fa-home\"></i>"
+        },
+        "crypto": {
+            "name": "Cryptocurrency",
+            "baseCost": 500,
+            "income": 5,
+            "unlockCondition": 250,
+            "description": "Invest in digital currencies",
+            "costMultiplier": 1.25,
+            "icon": "<i class=\"fab fa-bitcoin\"></i>"
+        },
+        "startup": {
+            "name": "Tech Startup",
+            "baseCost": 2000,
+            "income": 20,
+            "unlockCondition": 1000,
+            "description": "Fund innovative tech companies",
+            "costMultiplier": 1.3,
+            "icon": "<i class=\"fas fa-rocket\"></i>"
+        },
+        "hedge": {
+            "name": "Hedge Fund",
+            "baseCost": 10000,
+            "income": 100,
+            "unlockCondition": 5000,
+            "description": "Invest in sophisticated financial instruments",
+            "costMultiplier": 1.35,
+            "icon": "<i class=\"fas fa-university\"></i>"
+        }
+    }
+}
